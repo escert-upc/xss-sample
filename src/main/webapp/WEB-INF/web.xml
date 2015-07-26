@@ -1,0 +1,29 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+	      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+
+	<display-name>XSS Sample Application</display-name>
+
+	<welcome-file-list>
+		<welcome-file>home</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>home</servlet-name>
+		<jsp-file>/home.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<servlet-name>NewComment</servlet-name>
+		<servlet-class>edu.escert.xss.NewComment</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>home</servlet-name>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>NewComment</servlet-name>
+		<url-pattern>/newcomment</url-pattern>
+	</servlet-mapping>
+
+</web-app>
